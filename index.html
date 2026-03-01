@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¡Feliz 30 David!</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1516924553320-5f124b7a8e45?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 40px;
+  text-shadow: 2px 2px 5px black;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.guantes {
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 15px;
+  display: block;
+  box-shadow: 0 0 15px black;
+}
+
+.message {
+  font-size: 1.5em;
+  margin: 20px;
+  animation: fadeIn 3s ease-in-out;
+  text-shadow: 1px 1px 3px black;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {transform: translateY(-10px) rotate(0deg);}
+  100% {transform: translateY(110vh) rotate(360deg);}
+}
+</style>
+</head>
+<body>
+
+<h1>🎉 ¡David cumple 30! 🎉</h1>
+
+<div class="message">
+David, 30 años ya, y sigues siendo la misma persona divertida, buena gente y que alegra cualquier día.<br>
+Que sigas cumpliendo muchos más, siempre con tu alegría, tu risa contagiosa y siendo esa persona maravillosa que todos queremos cerca.<br>
+Tranquilo, que los 30 son solo un número, tú sigues siendo joven, loco y con la misma chispa de siempre… ¡y sin pelo, pero con estilo! 🏍️🧤
+</div>
+
+<img class="guantes" src="https://images.unsplash.com/photo-1590080873690-ef140fd9c8dc?auto=format&fit=crop&w=600&q=80" alt="Guantes de moto">
+
+<div class="message">
+Además, como regalo de cumple, tienes un <strong>vale para unos guantes de moto</strong>: tendrás que ir a la tienda y probarlos para elegir tu talla. ¡A disfrutarlos! 🏍️🧤
+</div>
+
+<div class="confetti" id="confetti"></div>
+
+<script>
+const confettiContainer = document.getElementById('confetti');
+for(let i=0; i<100; i++){
+  const piece = document.createElement('div');
+  piece.className = 'confetti-piece';
+  piece.style.left = Math.random() * 100 + 'vw';
+  piece.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+  piece.style.animationDuration = 3 + Math.random() * 3 + 's';
+  piece.style.width = 5 + Math.random() * 10 + 'px';
+  piece.style.height = piece.style.width;
+  confettiContainer.appendChild(piece);
+}
+</script>
+
+</body>
+</html>
